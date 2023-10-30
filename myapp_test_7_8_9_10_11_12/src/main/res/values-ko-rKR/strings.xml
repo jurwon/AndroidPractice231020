@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">MyApp_Test_7_8_9_10_11_12</string>
+    <string name="hello_blank_fragment">안녕 fragment</string>
     <string name="long_text">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</string>
     <string name="app_intro">안녕하세요. 앱 테스팅!!! </string>
+    <string name="open">열기</string>
+    <string name="close">닫기</string>
 </resources>

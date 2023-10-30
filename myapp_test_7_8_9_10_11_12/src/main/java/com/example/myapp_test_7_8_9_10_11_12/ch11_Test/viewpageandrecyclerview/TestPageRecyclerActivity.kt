@@ -5,6 +5,8 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import android.widget.ToggleButton
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,6 +18,8 @@ import com.example.myapp_test_7_8_9_10_11_12.databinding.ActivityTestPageRecycle
 class TestPageRecyclerActivity : AppCompatActivity() {
     lateinit var binding: ActivityTestPageRecyclerBinding
     lateinit var Tag:String
+    //액션버튼 스위치
+    lateinit var toggle:ActionBarDrawerToggle
     var newDataNumber = 11
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,7 +34,41 @@ class TestPageRecyclerActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
 
         //1)-2 툴바 오버플로우 메뉴 붙이기
-        //
+        //res->toobar_menu재활용
+
+        //2) 드로워 화면 뷰에서 설정
+
+        //3) 드로워 네비게이션 뷰 추가 설정 ->뷰에서 작업
+        //재료 1)네비게이션 헤더 2)본문 : res->메뉴
+
+        //3)-2 이벤트 핸들러 추가하기
+        //아이템 요소 클릭 이벤트 추가
+        binding.mainDrawerView.setNavigationItemSelectedListener {
+            it ->
+            if(it.title == "로그인"){
+                Toast.makeText(this@TestPageRecyclerActivity,"로그인화면 이동",Toast.LENGTH_SHORT).show()
+            }else if(it.title == "로그아웃"){
+                Toast.makeText(this@TestPageRecyclerActivity,"로그아웃 이동",Toast.LENGTH_SHORT).show()
+            }else if(it.title == "메인가기"){
+                Toast.makeText(this@TestPageRecyclerActivity,"메인가기 이동",Toast.LENGTH_SHORT).show()
+            }
+            true
+        }
+
+        //드로워 화면에 액션 버튼 클릭시 ->드로우 화면 나오게
+        toggle = ActionBarDrawerToggle(this@TestPageRecyclerActivity,binding.drawer,R.string.open,R.string.close)
+        //화면에 붙이는 작업
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        toggle.syncState()
+
+        //4) floating action Btn
+        binding.floatingActionBtn.setOnClickListener{
+            when(binding.floatingActionBtn.isExtended){
+                true -> binding.floatingActionBtn.shrink()
+                false -> binding.floatingActionBtn.extend()
+            }
+            Toast.makeText(this@TestPageRecyclerActivity,"create버튼 클릭됨", Toast.LENGTH_SHORT).show()
+        }
 
 
         // 뷰페이저2 프래그먼트 어댑터 이용해서 출력 해보기.
@@ -69,28 +107,25 @@ class TestPageRecyclerActivity : AppCompatActivity() {
 
     // 오버플로우 메뉴 이벤트 핸들러 추가하기.
     // 만약, 메뉴 교체 하면, 해당 아이디 다시 재정의하기.
-    override fun onOptionsItemSelected(item: MenuItem): Boolean = when(item.itemId) {
-        R.id.menu_toolbar1 -> {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        //이벤트가 toggle버튼에서 제공된거라면
+        //버튼을 열때 이용되는 이벤트 핸들러 부분
+        if(toggle.onOptionsItemSelected(item)){
+            return true
+            //오버플로우 메뉴 클릭시 이벤트
+        } else if ( R.id.menu_toolbar1 == item.itemId) {
             Toast.makeText(this@TestPageRecyclerActivity,"툴바메뉴1 클릭됨", Toast.LENGTH_SHORT).show()
             true
         }
-
-        R.id.menu_toolbar2 -> {
+        else if ( R.id.menu_toolbar2 == item.itemId) {
             Toast.makeText(this@TestPageRecyclerActivity,"툴바메뉴2 클릭됨", Toast.LENGTH_SHORT).show()
             true
         }
-
-        R.id.menu_toolbar3 -> {
+        else if ( R.id.menu_toolbar3 == item.itemId) {
             Toast.makeText(this@TestPageRecyclerActivity,"툴바메뉴3 클릭됨", Toast.LENGTH_SHORT).show()
             true
         }
-
-        /* R.id.menu_main4 -> {
-             Toast.makeText(this@Test11_ToolBarActivity,"메뉴4 클릭됨", Toast.LENGTH_SHORT).show()
-             true
-         }*/
-        // 람다식에서 return 사용 못함.
-        else -> super.onOptionsItemSelected(item)
+        return super.onOptionsItemSelected(item)
     }//검색 이벤트 핸들러 ================================================================================
 
 

@@ -10,13 +10,20 @@
     <!--기본적인 텍스트를 만들고 css 적용시 기본 틀 (부모 사용할 예정)-->
     <style name="MyTextCss">
         <item name="android:textSize">@dimen/text_size</item>
-        <item name="android:textColor">@color/main_text_color</item>
-        <item name="android:background">@color/main_text_bgcolor</item>
+        <item name="android:textColor">#e63946</item>
+        <item name="android:background">#f1faee</item>
+        <item name="android:fontFamily">@font/bmyeonsung</item>
+    </style>
+
+    <style name="CssMine">
+        <item name="android:textSize">@dimen/text_size</item>
+        <item name="android:textColor">#1d3557</item>
+        <item name="android:background">#a8dadc</item>
         <item name="android:fontFamily">@font/bmyeonsung</item>
     </style>
 
     <style name="MyToolBarCss">
-        <item name="android:background">@color/main_text_color</item>
+        <item name="android:background">#e63946</item>
     </style>
 
 </resources>
