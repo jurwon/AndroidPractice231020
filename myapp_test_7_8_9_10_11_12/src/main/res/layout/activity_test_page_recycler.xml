@@ -12,9 +12,9 @@
     그 하위에 자식 뷰가 2개인데,
     뷰1 본화면,
     뷰2 서랍 뷰 화면-->
-    <ScrollView
+    <!--<ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content">-->
         <androidx.constraintlayout.widget.ConstraintLayout
 
             android:layout_width="match_parent"
@@ -152,7 +152,7 @@
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
+   <!-- </ScrollView>-->
     <!--위에 뷰가 기본 뷰1 -> 주내용
 
     뷰2는 서랍처럼 사용이 될 뷰2-->

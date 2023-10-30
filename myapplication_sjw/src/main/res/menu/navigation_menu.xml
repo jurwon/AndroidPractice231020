@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:icon="@drawable/login"
+        android:title="로그인"/>
+
+    <item android:icon="@drawable/logout"
+        android:title="로그아웃"/>
+
+    <item android:icon="@drawable/main_view"
+        android:title="내 주변 맛집"/>
+
+    <item android:icon="@drawable/main_view"
+        android:title="랭킹"/>
+
+    <item android:icon="@drawable/main_view"
+        android:title="맛잘알 리스트"/>
+
+    <item android:icon="@drawable/main_view"
+        android:title="내 프로필"/>
+</menu>
