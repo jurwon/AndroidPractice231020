@@ -143,7 +143,7 @@ class Test10_2Activity : AppCompatActivity() {
 
             // 큰 이미지를 첨부해서 알림 보내기
             // 안드로이드 에서 사용하는 이미지 타입 비트맵, 바이트 등.
-            val bigPicture = BitmapFactory.decodeResource(resources, R.drawable.bread)
+            val bigPicture = BitmapFactory.decodeResource(resources, R.drawable.bob)
             val bigStyle = NotificationCompat.BigPictureStyle()
             bigStyle.bigPicture(bigPicture)
             builder.setStyle(bigStyle)
