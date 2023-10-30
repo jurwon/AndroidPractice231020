@@ -7,111 +7,135 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ch11_Test.viewpageandrecyclerview.TestPageRecyclerActivity">
-
-
-
+    <!--드러워 화면 구성
+    기본은 : 최상위 부모는 드로워 화면 태그
+    그 하위에 자식 뷰가 2개인데,
+    뷰1 본화면,
+    뷰2 서랍 뷰 화면-->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.ConstraintLayout
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ch11_Test.viewpageandrecyclerview.TestPageRecyclerActivity">
 
-        <!--툴바 뷰 생성 -->
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/MyToolBarCss">
-        </androidx.appcompat.widget.Toolbar>
 
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/viewPager1"
-            android:layout_width="match_parent"
-            android:layout_height="300dp" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewTest"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <Button
-                android:id="@+id/addBtn"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!--앱바를 구성하기 (툴바 포함하기.)-->
+                <!--일반 앱바 -> 접히는 화면으로 변경-->
+                <com.google.android.material.appbar.CollapsingToolbarLayout                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:background="#33E63946"
+                    app:title="AppBar Title"
+                    app:expandedTitleMarginBottom = "50dp"
+                    app:expandedTitleMarginStart = "50dp">
+
+
+                    <!--툴바 뷰 생성 -->
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        app:layout_collapseMode = "pin"
+                       />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/bob"/>
+
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/viewPager1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewTest"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    app:layout_behavior = "@string/appbar_scrolling_view_behavior"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <Button
+                        android:id="@+id/addBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="80dp"
+                        android:text="데이터추가"/>
+                    <Button
+                        android:id="@+id/delBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="30dp"
+                        android:text="데이터삭제"/>
+
+                </LinearLayout>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="test"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="test"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="test"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="test"/>
+
+
+            </LinearLayout>
+
+            <!--플로팅 액션 버튼 추가하기-->
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/floatingActionBtn"
+                android:text = "클릭시 해당 문자열 출력해보기."
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="80dp"
-                android:text="데이터추가"/>
-            <Button
-                android:id="@+id/delBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="30dp"
-                android:text="데이터삭제"/>
-
-        </LinearLayout>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            />
-
-    </LinearLayout>
+                app:icon="@drawable/create"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="80dp"
+                android:layout_marginRight="20dp"/>
 
 
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+    <!--위에 뷰가 기본 뷰1 -> 주내용
 
-    <!--플로팅 액션 버튼 추가하기-->
-    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:id="@+id/floatingActionBtn"
-        android:text = "클릭시 해당 문자열 출력"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:icon="@drawable/create"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginRight="40dp"
-        android:layout_marginTop="80dp"/>
+    뷰2는 서랍처럼 사용이 될 뷰2-->
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- <TextView
+         android:layout_width="400dp"
+         android:layout_height="match_parent"
+         android:text="테스트 서랍화면"
+         style="@style/MyTextCss"
+         android:gravity="center_horizontal |center_vertical"
+         android:layout_gravity="start"
+         />-->
 
-    <!--<TextView
-        android:layout_width="400dp"
-        android:layout_height="match_parent"
-        android:text="draw화면"
-        style="@style/CssMine"
-        android:gravity="center_horizontal|center_vertical"
-        android:layout_gravity="start"
-        />-->
-
+    <!--드로워 화면에 네비게이션 헤더및 본문 메뉴 추가-->
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/main_drawer_view"
         android:layout_width="wrap_content"
@@ -119,7 +143,5 @@
         android:layout_gravity="start"
         app:headerLayout="@layout/navigation_header"
         app:menu="@menu/navigation_menu"/>
-
-
 
 </androidx.drawerlayout.widget.DrawerLayout>
