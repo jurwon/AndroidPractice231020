@@ -22,25 +22,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication_231020_test1">
         <activity
-            android:name=".ch11_Test.viewpageandrecyclerview.TestPageRecyclerActivity"
+            android:name=".ch13_Test.TestIntent2DetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ch13_Test.TestIntentActivity"
             android:exported="true" />
         <activity
-            android:name=".ch11_Test.viewPager.TestViewPagerActivity"
+            android:name=".ch11_12_Test.viewpageandrecyclerview.TestPageRecyclerActivity"
             android:exported="true" />
         <activity
-            android:name=".ch11_Test.recyclerDataTest.TestRecyclerDataActivity"
+            android:name=".ch11_12_Test.viewPager.TestViewPagerActivity"
             android:exported="true" />
         <activity
-            android:name=".ch11_Test.Test11_RecyclerViewActivity"
+            android:name=".ch11_12_Test.recyclerDataTest.TestRecyclerDataActivity"
             android:exported="true" />
         <activity
-            android:name=".ch11_Test.Test11_FragmentActivity"
+            android:name=".ch11_12_Test.Test11_RecyclerViewActivity"
             android:exported="true" />
         <activity
-            android:name=".ch11_Test.Test11_ToolBarActivity"
+            android:name=".ch11_12_Test.Test11_FragmentActivity"
             android:exported="true" />
         <activity
-            android:name=".ch11_Test.Test11_ActionBarActivity"
+            android:name=".ch11_12_Test.Test11_ToolBarActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ch11_12_Test.Test11_ActionBarActivity"
             android:exported="true" />
 
         <receiver

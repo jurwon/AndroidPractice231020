@@ -10,7 +10,7 @@
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ch11_Test.Test11_FragmentActivity">
+    tools:context=".ch11_12_Test.Test11_FragmentActivity">
 
     <LinearLayout
         android:id="@+id/fragment1"

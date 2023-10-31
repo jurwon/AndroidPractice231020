@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ch11_Test.viewpageandrecyclerview.fragment.Test3Fragment">
+    tools:context=".ch11_12_Test.viewpageandrecyclerview.fragment.Test3Fragment">
 
     <LinearLayout
         android:layout_width="match_parent"

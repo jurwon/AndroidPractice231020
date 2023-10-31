@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ch11_Test.Test11_RecyclerViewActivity">
+    tools:context=".ch11_12_Test.Test11_RecyclerViewActivity">
 <!--리사이클러 뷰를 출력을 하기위한 액티비티 도화지-->
     <LinearLayout
         android:layout_width="match_parent"
