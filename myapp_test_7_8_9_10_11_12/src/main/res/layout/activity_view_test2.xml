@@ -87,8 +87,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerViewTest"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
-                app:layout_collapseMode="parallax"
+                android:layout_height="200dp"
                 app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
             <!--CoordinatorLayout 닫는 태그 -->
@@ -107,7 +106,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_behavior="@string/appbar_scrolling_view_behavior"
-                android:layout_marginTop="300dp"
+                android:layout_marginTop="200dp"
                 app:layout_constraintTop_toBottomOf="@+id/Linear1">
 
                 <LinearLayout
@@ -244,7 +243,7 @@
             app:icon="@drawable/animal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="150dp"/>
+            android:layout_marginBottom="50dp"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

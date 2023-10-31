@@ -2,8 +2,11 @@ package com.example.myapp_test_7_8_9_10_11_12.ch11_12_Test.tabTest
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.example.myapp_test_7_8_9_10_11_12.R
 import com.example.myapp_test_7_8_9_10_11_12.ch11_12_Test.viewpageandrecyclerview.fragment.Test1Fragment
+import com.example.myapp_test_7_8_9_10_11_12.ch11_12_Test.viewpageandrecyclerview.fragment.Test2Fragment
+import com.example.myapp_test_7_8_9_10_11_12.ch11_12_Test.viewpageandrecyclerview.fragment.Test3Fragment
 import com.example.myapp_test_7_8_9_10_11_12.databinding.ActivityTabTestBinding
 import com.google.android.material.tabs.TabLayout
 
@@ -26,6 +29,18 @@ class TabTestActivity : AppCompatActivity() {
         // 방법1) 코드상에서도 가능.
         val tabLayout = binding.tabs
 
+        /*val tab1: TabLayout.Tab = tabLayout.newTab()
+        tab1.text ="Tab1"
+        tabLayout.addTab(tab1)
+
+        val tab2: TabLayout.Tab = tabLayout.newTab()
+        tab2.text ="Tab2"
+        tabLayout.addTab(tab2)
+
+        val tab3: TabLayout.Tab = tabLayout.newTab()
+        tab3.text ="Tab3"
+        tabLayout.addTab(tab3)*/
+
         // 재료 중에서, 프래그먼트를 이용 -> 미리 만들어 둔 프래그먼트 재사용.
         // 탭의 첫화면을 , Test1Fragment 화면으로 구성하겠다라는 의미.
         supportFragmentManager.beginTransaction().add(R.id.tabContent, Test1Fragment()).commit()
@@ -36,15 +51,21 @@ class TabTestActivity : AppCompatActivity() {
             //익명 클래스 정의하고, 해당 이벤트 리스너 구현하면, 의무적으로,
             // 재정의 해야하는 함수3개 있음.
             override fun onTabSelected(tab: TabLayout.Tab?) {
-                TODO("Not yet implemented")
+                val transaction = supportFragmentManager.beginTransaction()
+                when(tab?.text) {
+                    "Tab1" -> transaction.replace(R.id.tabContent, Test1Fragment())
+                    "Tab2" -> transaction.replace(R.id.tabContent, Test2Fragment())
+                    "Tab3" -> transaction.replace(R.id.tabContent, Test3Fragment())
+                }
+                transaction.commit()
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {
-                TODO("Not yet implemented")
+                Toast.makeText(this@TabTestActivity,"onTabUnselected",Toast.LENGTH_SHORT).show()
             }
 
             override fun onTabReselected(tab: TabLayout.Tab?) {
-                TODO("Not yet implemented")
+                Toast.makeText(this@TabTestActivity,"onTabReselected",Toast.LENGTH_SHORT).show()
             }
 
         })
