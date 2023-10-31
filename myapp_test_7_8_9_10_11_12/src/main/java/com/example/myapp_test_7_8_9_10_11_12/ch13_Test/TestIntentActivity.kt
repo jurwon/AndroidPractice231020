@@ -2,6 +2,7 @@ package com.example.myapp_test_7_8_9_10_11_12.ch13_Test
 
 import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -22,6 +23,8 @@ class TestIntentActivity : AppCompatActivity() {
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.d("sjw","onCreate()")
+
         binding = ActivityTestIntentBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -85,6 +88,39 @@ class TestIntentActivity : AppCompatActivity() {
 
         }
 
+
+        //인텐트 필터를 이용해서 외부앱 접근====================================================================================
+        //intent : 시스템에 전달하는 메시지, intent-filter : 뭐하는지 나타내는 라벨
+        //시스템이 해당 필터의 요소 보고 해당 외부앱 연결해줌
+        //ex1) 좌표값이다. 위도 경도 -> 지도 앱(외부앱)
+        //후처리 데이터 보내기2 (ActivityResultLauncher)
+        binding.test5Btn.setOnClickListener{
+            //지도 맵 열기 테스트
+            // ACTION_VIEW : 뒤에 오는 내용에 따라 맞는 view 연결해줌
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("geo:37.7749,127.4194"))
+            // 현재, 지도 관련 앱이 다양하게 없어서, 아마도 기본 앱: 구글 맵이 나옴.
+            // 만약, 지도 관련 앱이 여러 개 있다면, 특정 앱을 선택이 가능함.
+            // 사용하는 앱의 패키지명을 정확히 입력함.
+            intent.setPackage("com.google.android.apps.maps")
+
+            //화면 이동(단순 이동)
+            startActivity(intent)
+
+        }
+
+        binding.test6Btn.setOnClickListener{
+            //지도 맵 열기 테스트
+            // ACTION_VIEW : 뒤에 오는 내용에 따라 맞는 view 연결해줌
+            val intent = Intent()
+            intent.action = Intent.ACTION_VIEW
+            intent.data = Uri.parse("https://www.google.com")
+            intent.setPackage("com.android.chrome") // 크롬 브라우저를 사용하도록 지정
+
+            //화면 이동(단순 이동)
+            startActivity(intent)
+
+        }
+
     }
 
     //onCreate밖에서 재정의
@@ -97,4 +133,33 @@ class TestIntentActivity : AppCompatActivity() {
 
         }
     }
-}
+
+
+    override fun onStart() {
+        super.onStart()
+        Log.d("sjw","onStart()")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("sjw","onResume()")
+    }
+
+
+    override fun onPause() {
+        super.onPause()
+        Log.d("sjw","onPause()")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d("sjw","onStop()")
+
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("sjw","onDestroy()")
+    }
+
+    }

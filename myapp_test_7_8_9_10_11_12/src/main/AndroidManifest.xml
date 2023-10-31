@@ -22,8 +22,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication_231020_test1">
         <activity
+            android:name=".ch13_Test.TestBundleActivity"
+            android:exported="true" />
+        <activity
             android:name=".ch13_Test.TestIntent2DetailActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".ch13_Test.TestIntentActivity"
             android:exported="true" />

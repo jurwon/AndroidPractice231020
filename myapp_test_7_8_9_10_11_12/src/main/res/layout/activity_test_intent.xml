@@ -59,6 +59,18 @@
             android:textSize="30sp"
             android:background="#4ADCB4"/>
 
+        <Button
+            android:id="@+id/test5Btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="intent filter를 이용한 외부 앱 연동"/>
+
+        <Button
+            android:id="@+id/test6Btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="intent filter를 이용한 외부 앱 연동2"/>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

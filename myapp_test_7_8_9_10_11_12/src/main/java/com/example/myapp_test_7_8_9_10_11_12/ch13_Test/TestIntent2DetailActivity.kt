@@ -13,6 +13,7 @@ class TestIntent2DetailActivity : AppCompatActivity() {
     lateinit var binding: ActivityTestIntent2DetailBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.d("sjw","2번화면 onCreate()")
         binding = ActivityTestIntent2DetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -56,5 +57,32 @@ class TestIntent2DetailActivity : AppCompatActivity() {
 
         }
 
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d("sjw","2번화면 onStart()")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("sjw","2번화면 onResume()")
+    }
+
+
+    override fun onPause() {
+        super.onPause()
+        Log.d("sjw","2번화면 onPause()")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d("sjw","2번화면 onStop()")
+
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("sjw","2번화면 onDestroy()")
     }
 }
