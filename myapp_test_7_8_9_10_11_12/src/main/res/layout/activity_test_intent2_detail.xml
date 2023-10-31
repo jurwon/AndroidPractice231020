@@ -12,25 +12,32 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/nameResultView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            style="@style/MyTextCss"/>
-
-        <TextView
             android:id="@+id/emailResultView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
-            style="@style/MyTextCss"/>
+            style="@style/CssMine"/>
+
+        <TextView
+            android:id="@+id/passwordResultView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            style="@style/CssMine"/>
 
         <TextView
             android:id="@+id/ageResultView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
-            style="@style/MyTextCss"/>
+            style="@style/CssMine"/>
+
+        <Button
+            android:id="@+id/test2Btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="후처리 데이터 보내기"
+            android:textSize="20sp"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
