@@ -39,6 +39,20 @@ class TestIntent2DetailActivity : AppCompatActivity() {
             
             //현재 앱 종료 (root activity가 아니면 finish()호출시 모두 종료)
             finish()
+        }
+
+
+        //후처리 데이터 보내기 방법2
+        binding.test4Btn.setOnClickListener {
+
+            //메시지 담기
+            intent.putExtra("result","후처리 방법 2")
+
+            //결과 코드 담기
+            setResult(RESULT_OK,intent)
+
+            //현재 앱 종료 (root activity가 아니면 finish()호출시 모두 종료)
+            finish()
 
         }
 

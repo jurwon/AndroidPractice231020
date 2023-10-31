@@ -60,6 +60,9 @@ class TestIntentActivity : AppCompatActivity() {
             startActivityForResult(intent,10)
         }
 
+
+        //후처리 데이터 보내기 방법 2 =====================================================================
+
         //후처리 함수 정의
         //ActivityResultLauncher -> StartActivityForResult : 시스템에서 정의해둔 함수
         //2번 화면에서 데이터를 가져왔을 때 처리하는 함수
@@ -67,13 +70,18 @@ class TestIntentActivity : AppCompatActivity() {
             ActivityResultContracts.StartActivityForResult()
         ){
             val result2 = it.data?.getStringExtra("result")
+            Log.d("sjw","result : ${result2}")
             binding.resultData1.text = "결과 : ${result2}"
         }
+
+
 
         //후처리 데이터 보내기2 (ActivityResultLauncher)
         binding.test3Btn.setOnClickListener{
             //데이터 추가 + 화면 이동
             val intent:Intent = Intent(this@TestIntentActivity,TestIntent2DetailActivity::class.java)
+
+            requestLauncher.launch(intent)
 
         }
 

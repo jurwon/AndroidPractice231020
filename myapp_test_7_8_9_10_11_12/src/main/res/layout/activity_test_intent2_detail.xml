@@ -38,6 +38,13 @@
             android:layout_height="wrap_content"
             android:text="후처리 데이터 보내기"
             android:textSize="20sp"/>
+
+        <Button
+            android:id="@+id/test4Btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="후처리 데이터 보내기2"
+            android:textSize="20sp"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
