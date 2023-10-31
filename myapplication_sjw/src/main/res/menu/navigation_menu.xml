@@ -7,15 +7,6 @@
     <item android:icon="@drawable/logout"
         android:title="로그아웃"/>
 
-    <item android:icon="@drawable/near"
-        android:title="내 주변 맛집"/>
-
-    <item android:icon="@drawable/trophy"
-        android:title="랭킹"/>
-
-    <item android:icon="@drawable/matzal"
-        android:title="맛잘알 리스트"/>
-
     <item android:icon="@drawable/profile"
-        android:title="내 프로필"/>
+        android:title="내 정보"/>
 </menu>

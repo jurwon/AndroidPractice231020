@@ -37,16 +37,7 @@ class MainActivity : AppCompatActivity() {
             else if (it.title == "로그아웃") {
                 Toast.makeText(this@MainActivity,"로그아웃 화면 이동",Toast.LENGTH_SHORT).show()
             }
-            else if (it.title == "내 주변 맛집") {
-                Toast.makeText(this@MainActivity,"내 주변 맛집 화면 이동",Toast.LENGTH_SHORT).show()
-            }
-            else if (it.title == "랭킹") {
-                Toast.makeText(this@MainActivity,"랭킹 화면 이동",Toast.LENGTH_SHORT).show()
-            }
-            else if (it.title == "맛잘알 리스트") {
-                Toast.makeText(this@MainActivity,"맛잘알 리스트 화면 이동",Toast.LENGTH_SHORT).show()
-            }
-            else if (it.title == "내 프로필") {
+            else if (it.title == "내 정보") {
                 Toast.makeText(this@MainActivity,"내 프로필 화면 이동",Toast.LENGTH_SHORT).show()
             }
             true
