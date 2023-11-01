@@ -25,11 +25,11 @@
             android:name=".ch16_Test.TestImageActivity"
             android:exported="true" />
 
-        <provider
+        <!--<provider
             android:name=".ch16_Test.MyContentProvider"
             android:authorities="com.example.test1234"
             android:enabled="true"
-            android:exported="true" />
+            android:exported="true" />-->
 
         <activity
             android:name=".ch13_Test.TestCoroutineActivity"
