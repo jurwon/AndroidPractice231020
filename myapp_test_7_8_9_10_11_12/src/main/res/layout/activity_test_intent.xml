@@ -17,13 +17,33 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-
         <EditText
             android:id="@+id/emailEdit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="이메일을 입력해주세요"
-            style="@style/CssMine"/>
+            style="@style/CssMine"
+            android:inputType="text"
+            android:layout_gravity="center"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/showEditBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="show"/>
+            <Button
+                android:id="@+id/hideEditBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="hide"/>
+
+        </LinearLayout>
 
         <EditText
             android:id="@+id/passwordEdit"
