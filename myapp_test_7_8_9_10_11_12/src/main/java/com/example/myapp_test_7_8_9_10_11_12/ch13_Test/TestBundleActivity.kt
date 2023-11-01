@@ -15,6 +15,10 @@ class TestBundleActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         Log.d("sjw","onCreate()")
 
+        if(savedInstanceState != null){
+            count = savedInstanceState.getInt("data3")
+        }
+
         binding = ActivityTestBundleBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -27,9 +31,7 @@ class TestBundleActivity : AppCompatActivity() {
             binding.resultText.text = "$count"
         }
 
-
-        //onCreate 마지막 블럭
-    }
+    }//onCreate 마지막 블럭
 
     //번들 객체 이용
     override fun onSaveInstanceState(outState: Bundle) {
@@ -38,6 +40,7 @@ class TestBundleActivity : AppCompatActivity() {
         Log.d("sjw","onSaveInstanceState()")
         outState.putString("data1","Hello")
         outState.putInt("data2",20)
+        outState.putInt("data3",count)
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
@@ -46,7 +49,9 @@ class TestBundleActivity : AppCompatActivity() {
         Log.d("sjw","onRestoreInstanceState()")
         val data1 = savedInstanceState.getString("data1")
         val data2 = savedInstanceState.getInt("data2")
-        binding.resultText.text = "${data1} - ${data2}"
+        val data3 = savedInstanceState.getInt("data3")
+        binding.resultText.text = "$data1 - $data2"
+        binding.resultText2.text ="count 임시저장 값 : $data3"
     }
 
     override fun onStart() {
