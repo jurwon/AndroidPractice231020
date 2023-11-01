@@ -113,8 +113,13 @@
                     android:id="@+id/Linear2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    >
+                    android:orientation="vertical">
+
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/Test2tabs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:tabMode="scrollable"></com.google.android.material.tabs.TabLayout>
 
                     <androidx.viewpager2.widget.ViewPager2
                         android:id="@+id/viewPager1"
