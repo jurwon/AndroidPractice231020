@@ -29,7 +29,7 @@
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.example.myapp_test_7_8_9_10_11_12.fileprovider"
             android:enabled="true"
-            android:exported="true"
+            android:exported="false"
             android:grantUriPermissions="true">
          <meta-data android:name="android.support.FILE_PROVIDER_PATHS"
             android:resource="@xml/file_paths"></meta-data>

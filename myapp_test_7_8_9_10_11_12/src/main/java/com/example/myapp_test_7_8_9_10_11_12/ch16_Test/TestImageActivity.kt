@@ -155,10 +155,10 @@ class TestImageActivity : AppCompatActivity() {
             Log.d("sjw","file.absolutePath : $filePath")
 
             //콘텐츠 프로바이더를 이용해서, 데이터를 가져와야 함.
+            // provider에서 정한 authorities 값이 필요함.
+            // 매니페스트 파일에 가서,
             val photoURI : Uri = FileProvider.getUriForFile(
-                this,
-                // provider에서 정한 authorities 값이 필요함.
-                // 매니페스트 파일에 가서,
+                this@TestImageActivity,
                 "com.example.myapp_test_7_8_9_10_11_12.fileprovider",
                 file
             )
