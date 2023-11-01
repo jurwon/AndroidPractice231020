@@ -1,10 +1,14 @@
 package com.example.myapp_test_7_8_9_10_11_12.ch11_12_Test
 
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.WindowInsets
+import android.view.WindowInsetsController
+import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.SearchView
@@ -24,6 +28,26 @@ class ViewTest2Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityViewTest2Binding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // 전체 화면 확인 해보기.
+        binding.fullScreenBtn.setOnClickListener {
+            // 전체 화면 설정 코드.
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                window.setDecorFitsSystemWindows(false)
+                val controller = window.insetsController
+                if (controller != null) {
+                    controller.hide(
+                        WindowInsets.Type.statusBars() or
+                                WindowInsets.Type.navigationBars())
+                    controller.systemBarsBehavior =
+                        WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+                }
+            } else {
+                window.setFlags(
+                    WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                    WindowManager.LayoutParams.FLAG_FULLSCREEN)
+            }
+        }
 
         //탭 뷰와 뷰페이져2 연동 .
         val tabLayout = binding.Test2tabs

@@ -154,9 +154,10 @@
 
 
                     <Button
+                        android:id="@+id/fullScreenBtn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="test" />
+                        android:text="fullScreenBtn" />
 
                     <Button
                         android:layout_width="wrap_content"

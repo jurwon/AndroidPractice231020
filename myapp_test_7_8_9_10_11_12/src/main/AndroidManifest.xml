@@ -38,7 +38,8 @@
             android:exported="true" />
         <activity
             android:name=".ch13_Test.TestIntentActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".ch11_12_Test.viewpageandrecyclerview.TestPageRecyclerActivity"
             android:exported="true" />
