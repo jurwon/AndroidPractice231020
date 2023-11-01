@@ -22,6 +22,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication_231020_test1">
         <activity
+            android:name=".ch16_Test.TestImageActivity"
+            android:exported="true" />
+
+        <provider
+            android:name=".ch16_Test.MyContentProvider"
+            android:authorities="com.example.test1234"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
             android:name=".ch13_Test.TestCoroutineActivity"
             android:exported="true" />
         <activity
