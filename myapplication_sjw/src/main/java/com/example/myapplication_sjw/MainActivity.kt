@@ -1,5 +1,6 @@
 package com.example.myapplication_sjw
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -8,6 +9,7 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.SearchView
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapplication_sjw.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -22,6 +24,15 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        //----- 테스트를 위한 더미 데이터 생성 --------------------
+        val testDataSet = ArrayList<String>()
+        for (i in 0..19) {
+            testDataSet.add("TEST DATA$i")
+        }
+        //--------------------------------------------------------
+
+
 
         //1) 툴바
         setSupportActionBar(binding.toolbar)

@@ -6,4 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".ch16_Test.MultiImgRecyclerTestActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/multiGalleryBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="갤러리 멀티 사진 픽"
+            android:textSize="20sp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/multiImagePickRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

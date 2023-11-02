@@ -23,10 +23,14 @@
         android:theme="@style/Theme.MyApplication_231020_test1">
         <activity
             android:name=".ch16_Test.MultiImgRecyclerTestActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".ch16_Test.TestImageActivity"
             android:exported="true" />
+        <!-- authorities 반드시 필요한 속성, 이 앱에 접근 할 때 암호 처럼 사용이될 예정. -->
+        <!-- 저장소 위치를 정하기. -->
+        <!-- 해당 uri 위치에 접근 허가 필요 -->
+        <!-- name 시스템으로 변경하기. -->
 
         <provider
             android:name="androidx.core.content.FileProvider"
