@@ -37,7 +37,7 @@ tools:context=".MemberListActivity">
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/multiImagePickRecycler"
+        android:id="@+id/memberRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

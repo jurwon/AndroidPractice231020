@@ -245,70 +245,8 @@ class JoinActivity : AppCompatActivity() {
                     .show()
             else Toast.makeText(this@JoinActivity, "데이터추가 실패", Toast.LENGTH_LONG).show()
 
-            viewAll()
         }
     }
-
-
-    // 데이터베이스 읽어오기
-    fun viewAll() {
-        // res에 조회된 , 테이블의 내용이 들어가 있다. select 의 조회의 결괏값있다.
-        val res = myDB!!.allData
-        // 결과가 없을 때
-        if (res.count == 0) {
-            ShowMessage("실패", "데이터를 찾을 수 없습니다.")
-        }
-
-        val buffer = StringBuffer()
-        while (res.moveToNext()) {
-            buffer.append(
-                //코틀린 3중 따옴표, 멀티 라인.
-                // 1행의 첫번째 컬럼을 가져오기.
-                """
-    ID: ${res.getString(0)}
-    
-    """.trimIndent()
-            )
-            buffer.append(
-                """
-    이름: ${res.getString(1)}
-    
-    """.trimIndent()
-            )
-            buffer.append(
-                """
-    EMAIL: ${res.getString(2)}
-    
-    """.trimIndent()
-            )
-            buffer.append(
-                """
-    PW: ${res.getString(3)}
-    
-    """.trimIndent()
-                )
-                buffer.append(
-                    """
-    ProfileImg: ${res.getString(4)}
-    
-    """.trimIndent()
-            )
-        }
-        ShowMessage("데이터", buffer.toString())
-    }
-
-
-    //사용자 정의 다이얼로그창 자주 이용할 때 사용하는 기본 샘플 코드
-    fun ShowMessage(title: String?, Message: String?) {
-        val builder = AlertDialog.Builder(this)
-        builder.setCancelable(true)
-        builder.setTitle(title)
-        builder.setMessage(Message)
-        builder.show()
-    }
-
-
-
 
 
     //크기를 조절해주는 임의의 함수 만들기.

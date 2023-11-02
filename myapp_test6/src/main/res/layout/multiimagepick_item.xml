@@ -5,31 +5,58 @@
 
     android:id="@+id/item_root"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="150dp"
     android:orientation="horizontal"
+    android:padding="5dp"
     >
 
     <ImageView
-        android:id="@+id/multiImageItem"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:id="@+id/profileImg"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:scaleType="centerCrop"
+        android:adjustViewBounds="true"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/user_basic"
         />
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_gravity="center_vertical">
 
         <TextView
-            android:id="@+id/multiImageTextItem"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="사진"
-            android:textSize="20sp"
-            android:gravity="center"
-            />
+            android:id="@+id/memberIdView"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="id"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="20dp"></TextView>
+
+        <TextView
+            android:id="@+id/memberNameView"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="id"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="20dp"></TextView>
+
+        <TextView
+            android:id="@+id/memberEmailView"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="email"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="20dp"></TextView>
+
+        <TextView
+            android:id="@+id/memberpasswordView"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="패스워드"
+            android:layout_marginLeft="20dp"></TextView>
 
     </LinearLayout>
 

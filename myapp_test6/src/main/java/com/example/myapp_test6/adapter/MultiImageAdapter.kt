@@ -1,7 +1,6 @@
 package com.example.myapp_test6.adapter
 
 import android.content.Context
-import android.net.Uri
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -9,12 +8,13 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.myapp_test6.databinding.MultiimagepickItemBinding
+import com.example.myapp_test6.model.Member
 
 //뷰를 모아둔 박스 -> 목록 요소의 뷰,
 class MyViewHolder (val binding: MultiimagepickItemBinding) : RecyclerView.ViewHolder(binding.root)
 
 //추가, 어댑터 파라미터에 context추가하면 해당 액티비티나 프래그먼트에서 뷰 작업하기 좋음
-class MultiImageAdapter (val datas: ArrayList<Uri>, val context: Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class MultiImageAdapter(val datas: ArrayList<Member>, val context: Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder =
         MyViewHolder(
@@ -30,14 +30,18 @@ class MultiImageAdapter (val datas: ArrayList<Uri>, val context: Context) : Recy
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         Log.d("sjw", "onBindViewHolder : $position")
-        val binding = (holder as com.example.myapp_test6.adapter.MyViewHolder).binding
+        val binding = (holder as MyViewHolder).binding
         //glid 이용해서 이미지 처리하기
         //데이터에서 각 요소 가져오기
-        Glide.with(context).load(datas[position])
+        Glide.with(context).load(datas[position].profileImage)
             //크기조절
             .override(200,200)
             //결과 이미지 넣기
-            .into(binding.multiImageItem)
+            .into(binding.profileImg)
+        binding.memberIdView.text = datas[position].id
+        binding.memberNameView.text= datas[position].name
+        binding.memberEmailView.text= datas[position].email
+        binding.memberpasswordView.text= datas[position].password
 
 
         //이벤트 처리할 때 필요한 부분
@@ -48,6 +52,7 @@ class MultiImageAdapter (val datas: ArrayList<Uri>, val context: Context) : Recy
                 Toast.makeText(context,"0번 요소 item clicked : $position", Toast.LENGTH_SHORT).show()
             }else{
                 Log.d("sjw", "0번 요소 item clicked : $position")
+                Toast.makeText(context,"0번 요소 외 item clicked : $position",Toast.LENGTH_SHORT).show()
             }
         }
     }

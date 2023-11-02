@@ -14,10 +14,7 @@
         android:theme="@style/Theme.MyApplication_231020_test1">
         <activity
             android:name=".MemberListActivity"
-            android:exported="false" />
-        <activity
-            android:name=".DatabaseActivity"
-            android:exported="false" />
+            android:exported="true" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

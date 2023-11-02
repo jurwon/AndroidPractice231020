@@ -2,4 +2,5 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="profile_img_width">150dp</dimen>
     <dimen name="profile_img_height">150dp</dimen>
+    <dimen name="text_size">20sp</dimen>
 </resources>
