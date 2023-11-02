@@ -222,7 +222,7 @@ class JoinActivity : AppCompatActivity() {
         }
 
 
-        binding.memberListView.setOnClickListener {
+        binding.memberListViewBtn.setOnClickListener {
             val intent = Intent(this@JoinActivity, MemberListActivity::class.java)
             startActivity(intent)
         }
