@@ -102,6 +102,7 @@ class DatabaseHelper(context: Context?) : SQLiteOpenHelper
 
 
     //데이터베이스 항목 읽어오기 Read
+    //Cursor = table
 
     val allData: Cursor
 

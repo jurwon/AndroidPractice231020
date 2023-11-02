@@ -7,7 +7,12 @@ import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
 import android.util.Log
+import android.view.View
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
 import com.example.myapp_test6.databinding.ActivityJoinBinding
@@ -17,8 +22,19 @@ import java.util.Date
 
 class JoinActivity : AppCompatActivity() {
 
+    var myDB: DatabaseHelper? = null
+
     private lateinit var binding: ActivityJoinBinding
     lateinit var filePath : String
+    lateinit var profileImageUri : String
+
+    var editTextID: EditText? = null
+    var editTextName: EditText? = null
+    var editTextEmail: EditText? = null
+    var editTextPassword: EditText? = null
+
+    var joinBtn: Button? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,12 +42,26 @@ class JoinActivity : AppCompatActivity() {
         binding = ActivityJoinBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //작업 구성 2가지.
+        //db연동작업===============================================================
+        //DatabaseHelper 클래스 를 사용한다.
+        myDB = DatabaseHelper(this)
+
+        editTextID = binding.editTextID
+        editTextName = binding.editTextName
+        editTextEmail = binding.editTextEmail
+        editTextPassword = binding.editTextPassword
+        joinBtn = binding.joinBtn
+
+        AddData()
+
+
+
+        //db작업 끝 ==================================================================
+
+
+        //이미지 작업 구성 2가지.
         // 첫번째, 갤러리 앱을 호출 하는 작업
         // 두번째, 갤러리 앱에 데이터를 가져온 내용을 처리하는 작업.
-
-        // 버튼클릭시 : 갤러리 앱 호출,
-        // 갤러리에서 선택 된 사진을 출력하는 뷰하나 생성.
 
         // 두번째, 갤러리 앱에 데이터를 가져온 내용을 처리하는 작업.
         val requestGalleryLauncher = registerForActivityResult(
@@ -40,15 +70,10 @@ class JoinActivity : AppCompatActivity() {
             // StartActivityForResult -> 이부분 각각 다 정의가 되어 있다.
             ActivityResultContracts.StartActivityForResult()
         ) {
-            // it 여기에, 갤러리에서 선택된 사진의 데이터가 들어 있음.
-            // 위치가 들어 있다.
-            //
-            // 1) 불러온 사진을 적절히 크기를 조절해서, OOM(OutOf Memory) ,
-            // 2) 바이트로 읽은 다음. ->
-            // 3) 비트맵 타입으로 변환작업
-
-            // try ~ catch 구문 사용할 예정. : IO(Input Output), 예외처리가 필요함.
             try {
+
+                profileImageUri = it.data!!.data.toString()!!
+
                 // 1) 불러온 사진을 적절히 크기를 조절해서, OOM(OutOf Memory) ,
                 // 적당한 비율로 줄여주는 단위를 정하는 임의의 함수.
                 // calculateInSampleSize 의 재료 , 인자로
@@ -108,6 +133,8 @@ class JoinActivity : AppCompatActivity() {
         val requestCameraFileLauncher = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
         ) {
+            profileImageUri = Uri.fromFile(File(filePath)).toString()
+
             //it , 카메라로 촬영된 사진이 들어 있음.
             // 원본 사진 크기 조절하는 비율 단위(정수값)
             // 사진을 AVD 가상머신을 넣을 때 어느정도 비율이 줄어들었음.
@@ -158,7 +185,7 @@ class JoinActivity : AppCompatActivity() {
             //콘텐츠 프로바이더를 이용해서, 데이터를 가져와야 함.
             // provider에서 정한 authorities 값이 필요함.
             // 매니페스트 파일에 가서,
-            val photoURI : Uri = FileProvider.getUriForFile(
+            var photoURI:Uri = FileProvider.getUriForFile(
                 this@JoinActivity,
                 "com.example.myapp_test6.fileprovider",
                 file
@@ -174,7 +201,88 @@ class JoinActivity : AppCompatActivity() {
 
         }
 
-    }  // onCreate
+    }  // onCreate---------------------------------------------------------------------------------------
+
+    //데이터베이스 추가하기
+    fun AddData() {
+        joinBtn!!.setOnClickListener {
+            val isInserted = myDB!!.insertData(
+                editTextID!!.text.toString(),
+                editTextName!!.text.toString(),
+                editTextEmail!!.text.toString(),
+                editTextPassword!!.text.toString(),
+                profileImageUri
+            )
+            if (isInserted == true)
+                Toast.makeText(this@JoinActivity, "데이터추가 성공", Toast.LENGTH_LONG)
+                    .show()
+            else Toast.makeText(this@JoinActivity, "데이터추가 실패", Toast.LENGTH_LONG).show()
+
+            viewAll()
+        }
+    }
+
+
+    // 데이터베이스 읽어오기
+    fun viewAll() {
+        // res에 조회된 , 테이블의 내용이 들어가 있다. select 의 조회의 결괏값있다.
+        val res = myDB!!.allData
+        // 결과가 없을 때
+        if (res.count == 0) {
+            ShowMessage("실패", "데이터를 찾을 수 없습니다.")
+        }
+
+        val buffer = StringBuffer()
+        while (res.moveToNext()) {
+            buffer.append(
+                //코틀린 3중 따옴표, 멀티 라인.
+                // 1행의 첫번째 컬럼을 가져오기.
+                """
+    ID: ${res.getString(0)}
+    
+    """.trimIndent()
+            )
+            buffer.append(
+                """
+    이름: ${res.getString(1)}
+    
+    """.trimIndent()
+            )
+            buffer.append(
+                """
+    EMAIL: ${res.getString(2)}
+    
+    """.trimIndent()
+            )
+            buffer.append(
+                """
+    PW: ${res.getString(3)}
+    
+    """.trimIndent()
+                )
+                buffer.append(
+                    """
+    ProfileImg: ${res.getString(4)}
+    
+    """.trimIndent()
+            )
+        }
+        ShowMessage("데이터", buffer.toString())
+    }
+
+
+    //사용자 정의 다이얼로그창 자주 이용할 때 사용하는 기본 샘플 코드
+    fun ShowMessage(title: String?, Message: String?) {
+        val builder = AlertDialog.Builder(this)
+        builder.setCancelable(true)
+        builder.setTitle(title)
+        builder.setMessage(Message)
+        builder.show()
+    }
+
+
+
+
 
     //크기를 조절해주는 임의의 함수 만들기.
     // 자주 쓰는 기능은 따로 클래스를 만들어서 재사용하면됨. 일단,

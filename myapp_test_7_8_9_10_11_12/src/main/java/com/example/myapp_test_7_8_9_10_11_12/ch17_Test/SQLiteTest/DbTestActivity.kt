@@ -54,14 +54,14 @@ class DbTestActivity : AppCompatActivity() {
         buttonInsert = binding.buttonInsert
         buttonView = binding.buttonView
         buttonUpdate = binding.buttonUpdate
-        buttonDelete = findViewById(R.id.buttonDelete)
         buttonDelete = binding.buttonDelete
         // 최초 1회 실행시, 직접 만든 함수를 호출하는 부분.
+        // 다른화면으로 이동이 없어서 여기에 선언
         AddData()
         viewAll()
         UpdateData()
         DeleteData()
-    }
+    } //onCreate
 
     //데이터베이스 추가하기
     fun AddData() {
@@ -80,6 +80,8 @@ class DbTestActivity : AppCompatActivity() {
 
     // 데이터베이스 읽어오기
     fun viewAll() {
+        //SAM(Single Abstrac Method)함수형 인터페이스, 추상 메서드가 하나인 메서드
+        //람다식 표현할때 자주 사용됨
         buttonView!!.setOnClickListener(View.OnClickListener {
             // res에 조회된 , 테이블의 내용이 들어가 있다. select 의 조회의 결괏값있다.
             val res = myDB!!.allData
@@ -157,6 +159,7 @@ class DbTestActivity : AppCompatActivity() {
         }
     }
 
+    //사용자 정의 다이얼로그창 자주 이용할 때 사용하는 기본 샘플 코드
     fun ShowMessage(title: String?, Message: String?) {
         val builder = AlertDialog.Builder(this)
         builder.setCancelable(true)
