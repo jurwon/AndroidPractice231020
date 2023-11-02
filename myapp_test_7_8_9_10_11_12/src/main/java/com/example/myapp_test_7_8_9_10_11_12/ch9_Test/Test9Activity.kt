@@ -48,7 +48,7 @@ class Test9Activity : AppCompatActivity() {
         // 사용하는 라이브러리의 sdk 버전의 지원 여부 확인.
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             val windowMetrics: WindowMetrics =  windowManager.currentWindowMetrics
-            Log.d("lsy","width: ${windowMetrics.bounds.width()}, height: ${windowMetrics.bounds.height()}")
+            Log.d("sjw","width: ${windowMetrics.bounds.width()}, height: ${windowMetrics.bounds.height()}")
         } else {
             val display = windowManager.defaultDisplay
         }
@@ -59,11 +59,11 @@ class Test9Activity : AppCompatActivity() {
 
         if(status == PackageManager.PERMISSION_GRANTED){
             Toast.makeText(this@Test9Activity,"위치 권한 승인됨",Toast.LENGTH_SHORT).show()
-            Log.d("lsy","권한이 승인됨 : ${status}")
+            Log.d("sjw","권한이 승인됨 : ${status}")
 
         } else {
             Toast.makeText(this@Test9Activity,"위치 권한 승인안됨",Toast.LENGTH_SHORT).show()
-            Log.d("lsy","권한이 승인안됨 : ${status}")
+            Log.d("sjw","권한이 승인안됨 : ${status}")
         }
 
         // 후처리, 인텐트 기본적인 사용법 단순 페이지 이동만 사용했음.
@@ -77,9 +77,9 @@ class Test9Activity : AppCompatActivity() {
             ActivityResultContracts.RequestPermission() ) {
             isGranted ->
             if(isGranted) {
-                Log.d("lsy","권한이 승인됨 , call back 후처리 요청. ")
+                Log.d("sjw","권한이 승인됨 , call back 후처리 요청. ")
             } else {
-                Log.d("lsy","권한이 승인안됨 , call back 후처리 요청. ")
+                Log.d("sjw","권한이 승인안됨 , call back 후처리 요청. ")
             }
         }
         // 이용 -> 호출, 위에 설정으로
@@ -94,14 +94,14 @@ class Test9Activity : AppCompatActivity() {
                 object : Toast.Callback() {
                     override fun onToastHidden() {
                         super.onToastHidden()
-                        Log.d("lsy","토스트 후처리 작업: 사라질 경우 ")
+                        Log.d("sjw","토스트 후처리 작업: 사라질 경우 ")
                         val intent = Intent(this@Test9Activity,TestActivity::class.java)
                         startActivity(intent)
                     }
 
                     override fun onToastShown() {
                         super.onToastShown()
-                        Log.d("lsy","토스트 후처리 작업: 나타날 경우 ")
+                        Log.d("sjw","토스트 후처리 작업: 나타날 경우 ")
                     }
                 }
             )
@@ -112,7 +112,7 @@ class Test9Activity : AppCompatActivity() {
         activityTest9Binding.dateBtn?.setOnClickListener {
             DatePickerDialog(this@Test9Activity , object : DatePickerDialog.OnDateSetListener {
                 override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
-                    Log.d("lsy","년도: ${year}년, 월: ${month+1}월, 일: ${dayOfMonth}"  )
+                    Log.d("sjw","년도: ${year}년, 월: ${month+1}월, 일: ${dayOfMonth}"  )
                     Toast.makeText(this@Test9Activity,"년도: ${year}년, 월: ${month+1}월, 일: ${dayOfMonth}"
                     ,Toast.LENGTH_SHORT).show()
                     // 텍스트 뷰에 설정해보기.
@@ -125,7 +125,7 @@ class Test9Activity : AppCompatActivity() {
         activityTest9Binding.timeBtn?.setOnClickListener {
             TimePickerDialog(this@Test9Activity, object : TimePickerDialog.OnTimeSetListener {
                 override fun onTimeSet(view: TimePicker?, hourOfDay: Int, minute: Int) {
-                    Log.d("lsy","${hourOfDay}시, ${minute}분"  )
+                    Log.d("sjw","${hourOfDay}시, ${minute}분"  )
                     Toast.makeText(this@Test9Activity,"${hourOfDay}시, ${minute}분"
                         ,Toast.LENGTH_SHORT).show()
                     // 텍스트 뷰에 설정해보기.
@@ -158,7 +158,7 @@ class Test9Activity : AppCompatActivity() {
                 // 추가 사항
                 val objectListener = object : DialogInterface.OnClickListener {
                     override fun onClick(dialog: DialogInterface?, which: Int) {
-                        Log.d("lsy","선택한 과일 : ${items[which]}")
+                        Log.d("sjw","선택한 과일 : ${items[which]}")
                     }
                 }
                 setItems(items,objectListener)
@@ -180,13 +180,13 @@ class Test9Activity : AppCompatActivity() {
                 // 추가 사항
 //                val objectListener = object : DialogInterface.OnClickListener {
 //                    override fun onClick(dialog: DialogInterface?, which: Int) {
-//                        Log.d("lsy","선택한 과일 : ${items[which]}")
+//                        Log.d("sjw","선택한 과일 : ${items[which]}")
 //                    }
 //                }
                 // 체크박스용 클릭 리스너 ,
                 val objectListener = object : DialogInterface.OnMultiChoiceClickListener {
                     override fun onClick(dialog: DialogInterface?, which: Int, isChecked: Boolean) {
-Log.d("lsy","${items[which]}이 ${if(isChecked) "선택됨"  else "선택해제됨"}")
+Log.d("sjw","${items[which]}이 ${if(isChecked) "선택됨"  else "선택해제됨"}")
                     }
                 }
                 // 목록요소 1
@@ -211,14 +211,14 @@ Log.d("lsy","${items[which]}이 ${if(isChecked) "선택됨"  else "선택해제�
                 // 체크박스용 클릭 리스너 ,
 //                val objectListener = object : DialogInterface.OnMultiChoiceClickListener {
 //                    override fun onClick(dialog: DialogInterface?, which: Int, isChecked: Boolean) {
-//                        Log.d("lsy","${items[which]}이 ${if(isChecked) "선택됨"  else "선택해제됨"}")
+//                        Log.d("sjw","${items[which]}이 ${if(isChecked) "선택됨"  else "선택해제됨"}")
 //                    }
 //                }
 
                 // 라디오 클릭 리스너
                 val objectListener = object : DialogInterface.OnClickListener {
                     override fun onClick(dialog: DialogInterface?, which: Int) {
-                        Log.d("lsy","선택한 과일 : ${items[which]}")
+                        Log.d("sjw","선택한 과일 : ${items[which]}")
                     }
                 }
                 // 목록요소 1

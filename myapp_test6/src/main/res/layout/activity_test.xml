@@ -108,7 +108,7 @@
                 <TextView
                     android:layout_width="150dp"
                     android:layout_height="50dp"
-                    android:text="이상용"
+                    android:text="손주원"
                     android:textSize="20sp"
                     android:layout_marginLeft="5dp"
                     android:paddingLeft="20dp"></TextView>

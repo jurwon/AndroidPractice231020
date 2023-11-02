@@ -11,7 +11,7 @@
     <ImageView
         android:layout_width="400dp"
         android:layout_height="300dp"
-        android:src="@drawable/hamburger"/>
+        android:src="@drawable/bob"/>
 
     <TextView
         android:layout_width="match_parent"

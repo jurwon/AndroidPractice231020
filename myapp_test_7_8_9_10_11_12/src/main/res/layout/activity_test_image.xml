@@ -48,14 +48,14 @@
                 android:layout_height="wrap_content"
                 android:text="갤러리"
                 android:layout_weight="1"
-                android:textSize="30sp"/>
+                android:textSize="20sp"/>
             <Button
                 android:id="@+id/cameraBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="카메라"
                 android:layout_weight="1"
-                android:textSize="30sp"/>
+                android:textSize="20sp"/>
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

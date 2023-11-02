@@ -17,7 +17,7 @@ class ReplyReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent) {
         val replyTxt = RemoteInput.getResultsFromIntent(intent)?.getCharSequence("key_text_reply")
-        Log.d("lsy", "replyTxt : $replyTxt")
+        Log.d("sjw", "replyTxt : $replyTxt")
 
         // 답장을 받는 동시에 또, 알림을 보내는 로직.
         val manager = context.getSystemService(AppCompatActivity.NOTIFICATION_SERVICE) as NotificationManager

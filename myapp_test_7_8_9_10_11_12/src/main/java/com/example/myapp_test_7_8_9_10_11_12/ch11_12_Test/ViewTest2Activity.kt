@@ -213,7 +213,7 @@ class ViewTest2Activity : AppCompatActivity() {
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextChange(newText: String?): Boolean {
                 //검색어가 변경시 마다, 실행될 로직을 추가.
-                Log.d("lsy","텍스트 변경시 마다 호출 : ${newText} ")
+                Log.d("sjw","텍스트 변경시 마다 호출 : ${newText} ")
                 return true
             }
 

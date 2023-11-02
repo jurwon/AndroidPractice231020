@@ -43,7 +43,7 @@ class MyDecoration(val context: Context): RecyclerView.ItemDecoration() {
         val left = width / 2 - drWidth?.div(2) as Int
         val top = height / 2 - drHeight?.div(2) as Int
 //        c.drawBitmap(
-//            BitmapFactory.decodeResource(context.getResources(), R.drawable.bread),
+//            BitmapFactory.decodeResource(context.getResources(), R.drawable.bob),
 //            left.toFloat(),
 //            top.toFloat(),
 //            null

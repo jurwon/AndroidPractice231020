@@ -23,18 +23,18 @@ class MyAdapter (val datas: MutableList<String>) : RecyclerView.Adapter<Recycler
 
     // 출력할 목록 아이템의 크기 (사이즈), 더미 데이터를 사용할 예정.
     override fun getItemCount(): Int {
-        Log.d("lsy","getItemCount : ${datas.size}")
+        Log.d("sjw","getItemCount : ${datas.size}")
         return datas.size
     }
 
     // 뷰에 데이터를 연동(바인딩) 해주는 작업.
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        Log.d("lsy", "onBindViewHolder : $position")
+        Log.d("sjw", "onBindViewHolder : $position")
         val binding = (holder as MyViewHolder).binding
         // 뷰 데이터 출력
         binding.testText.text = datas[position]
         binding.itemRoot.setOnClickListener {
-            Log.d("lsy", "item clicked : $position")
+            Log.d("sjw", "item clicked : $position")
         }
     }
 

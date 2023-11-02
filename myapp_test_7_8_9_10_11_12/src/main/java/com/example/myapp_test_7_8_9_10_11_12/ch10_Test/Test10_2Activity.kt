@@ -57,7 +57,7 @@ class Test10_2Activity : AppCompatActivity() {
                 // uri, 음원, 이미지, 영상등의 위치를 알려주는 타입 보시면.
                 // 예) http://도메인주소, 예) content://settings/system/notification_sound
                 val uri: Uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
-                Log.d("lsy","uri 의 위치가 어떻게 되니? : ${uri}")
+                Log.d("sjw","uri 의 위치가 어떻게 되니? : ${uri}")
                 val audioAttributes = AudioAttributes.Builder()
                     .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
                     .setUsage(AudioAttributes.USAGE_ALARM)

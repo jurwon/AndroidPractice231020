@@ -8,8 +8,8 @@ class  Test231023 (val name:String, val age:Int, val email:String) {
     }
     constructor(name:String, age:Int, email:String, password: String) : this(name, age, email)
 
-    var name3 : String = "이상용"
-    var email3: String = "lsy@naver.com"
+    var name3 : String = "손주원"
+    var email3: String = "sjw@naver.com"
 
     // 초기화를 미루겠다. 결론, 사용하는 시점에 초기화함.
     lateinit var name2: String
@@ -33,14 +33,14 @@ open class SuperClass(val name: String, val email: String) {
     init {
         println("부모 클래스 초기화 됨, 매 자식이 인스턴스 생성때마다")
     }
-//    val name : String = "이상용"
+//    val name : String = "손주원"
     fun sayHello() {
         println("클래스의 멤버 이름과 이메일 출력하기 : ${name}, ${email}")
     }
 
 }
 
-class SubClass : SuperClass("이상용","lsy@naver.com") {
+class SubClass : SuperClass("손주원","sjw@naver.com") {
     init {
         println("자식 클래스 초기화 됨, 인스턴스 생성때마다")
     }
@@ -82,7 +82,7 @@ class MyClass {
 
 fun main() {
 // 널허용 연산자. ?
-    var data: String? = "lsy"
+    var data: String? = "sjw"
 
     val resultdata = data?.length ?: 0
     println("resultdata : ${resultdata}")
@@ -107,10 +107,10 @@ fun main() {
 
     val MyClassTest = MyClass()
     MyClass.some()
-    val test11 = NonDataClass("이상용",20)
-    val test13 = NonDataClass("이상용",20)
-    val test12 = DataClass("이상용",20)
-    val test14 = DataClass("이상용",20)
+    val test11 = NonDataClass("손주원",20)
+    val test13 = NonDataClass("손주원",20)
+    val test12 = DataClass("손주원",20)
+    val test14 = DataClass("손주원",20)
     println("NonDataClass equals 확인 : ${test11.equals(test13)}")
 
     println("DataClass equals 확인 : ${test12.equals(test14)}")
@@ -119,10 +119,10 @@ fun main() {
     test33.printPassword()
     test33.sayHello()
 
-    val test1 : Test231023 = Test231023("이상용",40, "lsy@naver.com","1234")
-    val test23 : Test231023 = Test231023("이상용23",40, "lsy@naver.com","1234")
+    val test1 : Test231023 = Test231023("손주원",40, "sjw@naver.com","1234")
+    val test23 : Test231023 = Test231023("손주원23",40, "sjw@naver.com","1234")
     test23.sayHello()
-    val test3 : Test231023 = Test231023("이상용3",40, "lsy@naver.com","1234")
+    val test3 : Test231023 = Test231023("손주원3",40, "sjw@naver.com","1234")
     println("비 데이터 클래스 toString 해보기 (의미없는 메모리 주소값 표기): " + test1.toString())
 
     test1.name2 = "초기값 할당 후 사용."
@@ -130,7 +130,7 @@ fun main() {
     println("lateInitName 사용 : " + lateInitName)
 
     val array_0 = test1.data5.get(0)
-    test1.data5.set(0,"이상용 0")
+    test1.data5.set(0,"손주원 0")
     println("array_0 의 값: " + array_0)
 
     var mutableList = mutableListOf<Int>(10,20,30)
@@ -182,7 +182,7 @@ println()
 
 
 
-    val test2: User = User("이상용2","lsy2@naver.com","1234")
+    val test2: User = User("손주원2","sjw2@naver.com","1234")
     println("데이터 클래스 toString 해보기 (실제값 표기): " + test2.toString())
 
 }

@@ -24,6 +24,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
+
         <!--App Bar-->
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appbar"
@@ -43,8 +44,16 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:theme="@style/MyToolBarCss"
+            app:layout_collapseMode="pin"
             />
         </com.google.android.material.appbar.AppBarLayout>
+
+        <!--앱바 , 리사이클러뷰 연동 테스트 -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewTest"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
         <!--본문 내용 위치-->
 

@@ -14,7 +14,7 @@ class Test8Activity : AppCompatActivity() {
     ////////////////////////////////////////////////////////////////////////////////////
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        TAG ="lsy"
+        TAG ="sjw"
 //        setContentView(R.layout.activity_test8)
         // 모든 뷰들의 인스턴스들을 하나의 인스턴스에 모두 담기.
         // 하나의 인스턴스에서 뷰를 꺼내어서 사용하기.

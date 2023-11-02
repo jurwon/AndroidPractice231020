@@ -45,8 +45,8 @@ fun main() {
     // 기본은 변경이 되지 않는 상수를 주로 사용을 하되, 만약, 변경이 되는 부분이면 var 쓰면 됨.
     // 코틀린에서는 모든 타입이 , 참조형(객체)
     // 자바는 : 기본(형) 타입 8가지, 그외 형(참조형)
-    var name = "lsy";
-    var name2 : String = "lsy2";
+    var name = "sjw";
+    var name2 : String = "sjw2";
     var age : Int = 10;
     var age2 = 10;
     println("이름 : " + name)

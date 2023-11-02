@@ -14,31 +14,31 @@ class OneFragment : Fragment() {
     lateinit var binding : FragmentOneBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d("lsy","생명주기,onCreate ")
+        Log.d("sjw","생명주기,onCreate ")
     }
 
     override fun onStart() {
         super.onStart()
-        Log.d("lsy","생명주기,onStart ")
+        Log.d("sjw","생명주기,onStart ")
     }
     override fun onResume() {
         super.onResume()
-        Log.d("lsy","생명주기,onResume ")
+        Log.d("sjw","생명주기,onResume ")
     }
 
     override fun onPause() {
         super.onPause()
-        Log.d("lsy","생명주기,onPause ")
+        Log.d("sjw","생명주기,onPause ")
     }
 
     override fun onStop() {
         super.onStop()
-        Log.d("lsy","생명주기,onStop ")
+        Log.d("sjw","생명주기,onStop ")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.d("lsy","생명주기 onDestroy, ")
+        Log.d("sjw","생명주기 onDestroy, ")
     }
 
     override fun onCreateView(

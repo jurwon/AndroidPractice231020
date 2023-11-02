@@ -11,7 +11,7 @@
         android:id="@+id/img1"
         android:layout_width="wrap_content"
         android:layout_height="300dp"
-        android:src="@drawable/bread"
+        android:src="@drawable/bob"
         app:layout_constraintBottom_toTopOf="@id/text1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

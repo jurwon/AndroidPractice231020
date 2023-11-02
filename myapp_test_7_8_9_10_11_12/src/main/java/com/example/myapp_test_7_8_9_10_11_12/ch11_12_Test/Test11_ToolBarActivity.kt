@@ -35,7 +35,7 @@ class Test11_ToolBarActivity : AppCompatActivity() {
 
     // 액션바  업버튼 클릭 이벤트 처리.
     override fun onSupportNavigateUp(): Boolean {
-        Log.d("lsy","test")
+        Log.d("sjw","test")
         onBackPressed()
         return super.onSupportNavigateUp()
     }
@@ -54,7 +54,7 @@ class Test11_ToolBarActivity : AppCompatActivity() {
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextChange(newText: String?): Boolean {
                 //검색어가 변경시 마다, 실행될 로직을 추가.
-                Log.d("lsy","텍스트 변경시 마다 호출 : ${newText} ")
+                Log.d("sjw","텍스트 변경시 마다 호출 : ${newText} ")
                 return true
             }
 
