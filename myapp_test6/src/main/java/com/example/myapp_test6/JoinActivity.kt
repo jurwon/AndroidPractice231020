@@ -18,7 +18,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapp_test6.databinding.ActivityJoinBinding
-import com.example.myapp_test6.recycler.MyAdapter
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -65,7 +64,7 @@ class JoinActivity : AppCompatActivity() {
         //리사이클러뷰 (회원 리스트)
 
         //----- 테스트를 위한 더미 데이터 생성 --------------------
-        val testDataSet = ArrayList<String>()
+       /* val testDataSet = ArrayList<String>()
         for (i in 0..19) {
             testDataSet.add("TEST DATA$i")
         }
@@ -76,7 +75,9 @@ class JoinActivity : AppCompatActivity() {
         recyclerView.layoutManager = linearLayoutManager // LayoutManager 설정
 
         val customAdapter = MyAdapter(testDataSet)
-        recyclerView.adapter = customAdapter // 어댑터 설정
+        recyclerView.adapter = customAdapter // 어댑터 설정*/
+
+        //---------------------------------------------------------
 
         //이미지 작업 구성 2가지.
         // 첫번째, 갤러리 앱을 호출 하는 작업
@@ -219,6 +220,13 @@ class JoinActivity : AppCompatActivity() {
             requestCameraFileLauncher.launch(intent)
 
         }
+
+
+        binding.memberListView.setOnClickListener {
+            val intent = Intent(this@JoinActivity, MemberListActivity::class.java)
+            startActivity(intent)
+        }
+
 
     }  // onCreate---------------------------------------------------------------------------------------
 

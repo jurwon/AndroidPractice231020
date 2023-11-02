@@ -136,21 +136,18 @@
         android:text="회원가입하기"
         android:textSize="20sp"/>
 
-
-    <TextView
+    <Button
+        android:id="@+id/memberListView"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="회원 목록"
-        android:textSize="20sp"
-        android:gravity="center_horizontal"
-        android:layout_marginTop="30dp"/>
+        android:layout_height="wrap_content"
+        android:text="회원조회하기"
+        android:textSize="20sp"/>
 
-
-    <androidx.recyclerview.widget.RecyclerView
+    <!--<androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"/>
+        android:layout_weight="1"/>-->
 
 </LinearLayout>
 
