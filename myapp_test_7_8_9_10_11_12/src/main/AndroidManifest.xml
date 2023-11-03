@@ -15,7 +15,9 @@
     <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" /> <!-- 외부 통신 위한 인터넷 퍼미션 추가 -->
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <!--네트워크 서비스를 애플리케이션에 미리 등록해서 사용함-->
     <application
+        android:name=".ch18_Test.retrofit.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="Menu"
@@ -24,7 +26,7 @@
         android:theme="@style/Theme.MyApplication_231020_test1">
         <activity
             android:name=".ch18_Test.HttpTestReqResActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".ch17_Test.PreferenceTest.SharedPrefTestActivity"
             android:exported="true" />

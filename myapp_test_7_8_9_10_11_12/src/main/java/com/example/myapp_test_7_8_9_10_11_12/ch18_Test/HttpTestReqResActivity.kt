@@ -3,6 +3,7 @@ package com.example.myapp_test_7_8_9_10_11_12.ch18_Test
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.myapp_test_7_8_9_10_11_12.R
+import com.example.myapp_test_7_8_9_10_11_12.ch18_Test.retrofit.MyApplication
 import com.example.myapp_test_7_8_9_10_11_12.databinding.ActivityHttpTestReqResBinding
 
 class HttpTestReqResActivity : AppCompatActivity() {
@@ -23,6 +24,23 @@ class HttpTestReqResActivity : AppCompatActivity() {
         //준비작업1 ) 모델 준비하기
         //2) 모델을 요소로 하는 리스트로 준비하기.
 
-        //준비작업2 ) networkInterface만들기
+        //준비작업2 ) networkInterface 정의하기
+        
+        //준비작업3 ) myapplication,baseurl등록, 인터페이스 연결
+        // 등록해서 앱 실행시 선언 및 초기화 자동으로 되고 바로 사용 가능
+
+        //4) 일단 retrofit통신 이용해서 데이터가 전달 되는지 확인
+        
+        //데이터 가져오기 1
+        //applicationContext안에 등록한 설정 담겨있음
+        val networkService = (applicationContext as MyApplication).networkService
+
+        //호출하는 함수 콜 만들기
+        val userListCall = networkService.doGetUserList("2")
+
+        //실제 통신이 시작되는 부분, 이 함수를 통해 데이터를 받아옴
+        userListCall.enqueue()
+
+        //5) 리사이클러뷰에 넣음
     }
 }
