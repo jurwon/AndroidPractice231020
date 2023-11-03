@@ -18,7 +18,7 @@ class MyApplication :Application() {
     val retrofit : Retrofit
 
         get() = Retrofit.Builder()
-            .baseUrl("httmls://reques.in/")//상대방 서버
+            .baseUrl("https://reqres.in/")//상대방 서버
             .addConverterFactory(GsonConverterFactory.create())//형변환
             .build()
     init{

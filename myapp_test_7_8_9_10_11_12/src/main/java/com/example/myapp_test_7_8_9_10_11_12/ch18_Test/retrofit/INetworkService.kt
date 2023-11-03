@@ -20,8 +20,11 @@ interface INetworkService {
     //반환 타입은 call, 담겨진 데이터는 리스트의 요소가(UserModel)
     fun doGetUserList(@Query("page") page: String): Call<UserListModel>
 
+    // 프로필 이미지를 받기 위한 , 추상 함수.
+    //@Url
+    //기본 baseUrl 이 있지만, 다른 url 를 호출 할 때 사용.
     @GET
-    fun doGetAvatarImage(@Url url: String, @Query("avatar") name: String): Call<ResponseBody>
+    fun getAvatarImage(@Url url:String): Call<ResponseBody>
 
 
 }

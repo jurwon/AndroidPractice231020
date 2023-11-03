@@ -13,7 +13,7 @@ data class UserModel(
 
     //FirstName 저장하면 first_name으로 자동 변환됨
 
-    val id : Int,
+    val id : String,
     val email : String,
     @SerializedName("first_name")
     val first_name : String,
