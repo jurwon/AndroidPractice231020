@@ -23,5 +23,6 @@ class HttpTestReqResActivity : AppCompatActivity() {
         //준비작업1 ) 모델 준비하기
         //2) 모델을 요소로 하는 리스트로 준비하기.
 
+        //준비작업2 ) networkInterface만들기
     }
 }
