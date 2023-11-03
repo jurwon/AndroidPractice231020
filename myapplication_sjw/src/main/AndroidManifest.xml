@@ -10,7 +10,7 @@
         android:theme="@style/Theme.MyApplication_231020_test1">
         <activity
             android:name=".LoginActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

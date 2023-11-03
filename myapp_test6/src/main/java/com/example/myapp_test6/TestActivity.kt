@@ -80,7 +80,9 @@ class TestActivity : AppCompatActivity() {
 
         // 라디오 버튼 체크 확인.
         activityTestBinding.radio1.setOnCheckedChangeListener { buttonView, isChecked ->
-            Toast.makeText(this@TestActivity,"남자 클릭됨",Toast.LENGTH_SHORT).show()
+            // // 라디오 버튼 값 가져오는 샘플
+            val test = buttonView.text.toString()
+            Toast.makeText(this@TestActivity,"남자 클릭됨 : $test",Toast.LENGTH_SHORT).show()
         }
 
         activityTestBinding.radio2.setOnCheckedChangeListener { buttonView, isChecked ->

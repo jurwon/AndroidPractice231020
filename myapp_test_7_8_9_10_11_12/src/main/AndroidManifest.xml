@@ -22,6 +22,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication_231020_test1">
         <activity
+            android:name=".ch17_Test.PreferenceTest.SharedPrefTestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ch17_Test.PreferenceTest.SharedPrefDetailTestActivity"
+            android:exported="false" />
+        <activity
             android:name=".ch17_Test.SQLiteTest.DbTestActivity"
             android:exported="true" />
         <activity

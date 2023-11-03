@@ -8,5 +8,11 @@
         android:title="로그아웃"/>
 
     <item android:icon="@drawable/profile"
+        android:title="회원가입"/>
+
+    <item android:icon="@drawable/profile"
         android:title="내 정보"/>
+
+    <item android:icon="@drawable/profile"
+        android:title="회원 조회"/>
 </menu>

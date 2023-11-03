@@ -48,8 +48,14 @@ class MainActivity : AppCompatActivity() {
             else if (it.title == "로그아웃") {
                 Toast.makeText(this@MainActivity,"로그아웃 화면 이동",Toast.LENGTH_SHORT).show()
             }
+            else if (it.title == "회원가입") {
+                Toast.makeText(this@MainActivity,"회원가입 화면 이동",Toast.LENGTH_SHORT).show()
+            }
             else if (it.title == "내 정보") {
                 Toast.makeText(this@MainActivity,"내 프로필 화면 이동",Toast.LENGTH_SHORT).show()
+            }
+            else if (it.title == "회원 조회") {
+                Toast.makeText(this@MainActivity,"회원조회 화면 이동",Toast.LENGTH_SHORT).show()
             }
             true
         }
