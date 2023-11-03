@@ -6,4 +6,38 @@
     android:layout_height="match_parent"
     tools:context=".ch17_Test.PreferenceTest.SharedPrefDetailTestActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/getSharedPreferBtnTest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="정보 가져오기"
+            android:textSize="20sp"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/resultIdSP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="50dp"/>
+
+        <TextView
+            android:id="@+id/resultPasswordSP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="50dp"/>
+
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
