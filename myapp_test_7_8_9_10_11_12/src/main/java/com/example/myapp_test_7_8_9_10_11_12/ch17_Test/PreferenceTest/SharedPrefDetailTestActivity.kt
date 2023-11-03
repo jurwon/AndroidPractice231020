@@ -26,5 +26,23 @@ class SharedPrefDetailTestActivity : AppCompatActivity() {
         binding.resultIdSP.text = id
         binding.resultPasswordSP.text = password
 
+        //삭제 테스트1 (부분삭제)
+        //내용물만 삭제되고 파일은 삭제 안됨
+        binding.deleteSharedPreferBtnTest.setOnClickListener {
+            val pref = getSharedPreferences("memberInfo", MODE_PRIVATE);
+            val editor = pref.edit();
+            editor.remove("id");
+            editor.remove("password");
+            editor.commit();
+        }
+
+        //삭제 테스트2 (파일 전체 삭제) deleteFileSharedPreferBtnTest
+        binding.deleteFileSharedPreferBtnTest.setOnClickListener {
+            val pref = getSharedPreferences("memberInfo", MODE_PRIVATE);
+            val editor = pref.edit();
+            editor.clear();
+            editor.commit();
+        }
+
     }
 }

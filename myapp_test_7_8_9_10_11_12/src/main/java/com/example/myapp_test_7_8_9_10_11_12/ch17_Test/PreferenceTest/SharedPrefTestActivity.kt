@@ -1,6 +1,7 @@
 package com.example.myapp_test_7_8_9_10_11_12.ch17_Test.PreferenceTest
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.myapp_test_7_8_9_10_11_12.R
@@ -30,6 +31,10 @@ class SharedPrefTestActivity : AppCompatActivity() {
             editor.putString("id",id)
             editor.putString("password",password)
             editor.commit()
+
+            //이동
+            val intent = Intent(this@SharedPrefTestActivity,SharedPrefDetailTestActivity::class.java)
+            startActivity(intent)
         }
     }
 }
