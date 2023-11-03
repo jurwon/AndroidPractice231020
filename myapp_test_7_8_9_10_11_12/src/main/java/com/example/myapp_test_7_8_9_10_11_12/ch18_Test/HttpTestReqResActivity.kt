@@ -19,6 +19,9 @@ class HttpTestReqResActivity : AppCompatActivity() {
         
         //http 통신
         //1)MyApplication 설정 파일 2)인터페이스 3) 모델 또는 모델이 담겨진 리스트
+        
+        //준비작업1 ) 모델 준비하기
+        //2) 모델을 요소로 하는 리스트로 준비하기.
 
     }
 }
