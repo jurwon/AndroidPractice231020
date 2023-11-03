@@ -1,10 +1,12 @@
 package com.example.myapp_test_7_8_9_10_11_12.ch17_Test.PreferenceTest
 
-import android.content.Context
+
+import android.content.Context.MODE_PRIVATE
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.myapp_test_7_8_9_10_11_12.R
+import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat.startActivity
 import com.example.myapp_test_7_8_9_10_11_12.databinding.ActivitySharedPrefTestBinding
 
 //1번 화면
@@ -22,7 +24,7 @@ class SharedPrefTestActivity : AppCompatActivity() {
         binding.joinBtnSP.setOnClickListener {
             val id = binding.editTextID.text.toString()
             val password = binding.editTextPassword.text.toString()
-            //라디오 잠시 대기
+            val pickRadio = getValue(binding.testRadioGroup)
 
             //공유 프리퍼런스에 값 넣기
             // 공유프리퍼런스 값 넣기. 저장.
@@ -30,11 +32,25 @@ class SharedPrefTestActivity : AppCompatActivity() {
             val editor = pref.edit()
             editor.putString("id",id)
             editor.putString("password",password)
+            editor.putString("pickRadio",pickRadio)
             editor.commit()
 
             //이동
             val intent = Intent(this@SharedPrefTestActivity,SharedPrefDetailTestActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    fun getValue(v: View?): String? {
+        val male = binding.radio1
+        val female = binding.radio2
+        var pickValue: String? = null
+
+        if (male.isChecked) {
+            pickValue = male.text.toString()
+        } else if (female.isChecked) {
+            pickValue = female.text.toString()
+        }
+        return pickValue
     }
 }
