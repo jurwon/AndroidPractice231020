@@ -11,7 +11,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class MyApplication2 :Application() {
 
-    companion object {
         val QUERY = "travel"
         val QUERY2 = "Apple"
         val from ="2023-05-22"
@@ -31,6 +30,5 @@ class MyApplication2 :Application() {
         init {
             networkService = retrofit.create(INetworkService2::class.java)
         }
-    }
 
 }

@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.myapp_test_7_8_9_10_11_12.R
 import com.example.myapp_test_7_8_9_10_11_12.ch18_Test.adapter.MyAdapterRetrofit
 import com.example.myapp_test_7_8_9_10_11_12.ch18_Test.model.UserListModel
 import com.example.myapp_test_7_8_9_10_11_12.ch18_Test.retrofit.MyApplication

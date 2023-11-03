@@ -20,7 +20,7 @@
 
         <!--리사이클러뷰 먼저 붙이기-->
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/retrofitRecyclerView"
+            android:id="@+id/retrofitRecyclerView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         </androidx.recyclerview.widget.RecyclerView>
