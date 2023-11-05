@@ -14,6 +14,8 @@ class Test1Fragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = FragmentTest1Binding.inflate(layoutInflater)
+
+
     }
 
     override fun onCreateView(

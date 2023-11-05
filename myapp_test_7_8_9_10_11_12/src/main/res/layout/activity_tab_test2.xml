@@ -20,8 +20,6 @@
             android:layout_height="wrap_content"
             app:tabGravity="fill">
 
-
-
         </com.google.android.material.tabs.TabLayout>
 
         <!--뷰페이져가 그려지 위치를 추가.-->

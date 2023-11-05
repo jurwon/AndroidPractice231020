@@ -10,7 +10,9 @@ import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.myapplication_sjw.adapter.ViewPageAdapter
 import com.example.myapplication_sjw.databinding.ActivityMainBinding
+import com.google.android.material.tabs.TabLayoutMediator
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,9 +35,21 @@ class MainActivity : AppCompatActivity() {
         //--------------------------------------------------------
 
 
-
         //1) 툴바
-        setSupportActionBar(binding.toolbar)
+        //setSupportActionBar(binding.toolbar)
+
+        // 탭 레이아웃과 뷰페이저2 연동하기.
+        // 탭 뷰 부분 선택
+        val tabLayout = binding.tabs
+        // 뷰페이져2 뷰 부분 선택
+        val viewPager = binding.viewpagerTab
+        //어댑터 연결
+        viewPager.adapter = ViewPageAdapter(this)
+
+        // 뷰페이져2, 탭 레이아웃 연결 시켜주는 기능.
+        TabLayoutMediator(tabLayout, viewPager) {
+                tab, position -> tab.text = "Tab${position+1}"
+        }.attach()
 
 
         // 3) 이벤트 핸들러 추가하기.
