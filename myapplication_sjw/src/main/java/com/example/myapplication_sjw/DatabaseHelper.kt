@@ -45,6 +45,11 @@ class DatabaseHelper (context: Context?) : SQLiteOpenHelper
             return db.rawQuery("select * from $TABLE_NAME", null)
         }
 
+    fun loginCheck(id: String?, password: String?): Cursor {
+        val db = this.readableDatabase
+        return db.rawQuery("select * from $TABLE_NAME WHERE ID='$id' AND Password='$password'" , null)
+    }
+
 
     fun updateData(id: String?, password: String?, name: String?,gender: String?,profileImage: String?): Boolean {
 
