@@ -3,5 +3,5 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
     <external-path
         name="myfiles"
-        path="Android/data/com.example.myapp_test6/files/Pictures"/>
+        path="Android/data/com.example.myapplication_sjw/files/Pictures"/>
 </paths>

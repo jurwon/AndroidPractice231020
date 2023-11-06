@@ -12,7 +12,7 @@ class DatabaseHelper (context: Context?) : SQLiteOpenHelper
     override fun onCreate(db: SQLiteDatabase?) {
         db?.execSQL("create table " + TABLE_NAME +
 
-                "(ID TEXT, PASSWORD TEXT, NAME TEXT,GENDER TEXT, EMAIL TEXT,PROFILEIMAGE TEXT)")
+                "(ID TEXT, PASSWORD TEXT, NAME TEXT,GENDER TEXT,PROFILEIMAGE TEXT)")
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
@@ -77,7 +77,7 @@ class DatabaseHelper (context: Context?) : SQLiteOpenHelper
         const val COL_2 = "Password"
         const val COL_3 = "Name"
         const val COL_4 = "Gender"
-        const val COL_5 = "profileImage"
+        const val COL_5 = "ProfileImage"
 
     }
 

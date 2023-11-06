@@ -1,6 +1,7 @@
 package com.example.myapplication_sjw
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -58,12 +59,16 @@ class MainActivity : AppCompatActivity() {
                 it ->
             if (it.title == "로그인") {
                 Toast.makeText(this@MainActivity,"로그인 화면 이동",Toast.LENGTH_SHORT).show()
+                val intent = Intent(this@MainActivity, LoginActivity::class.java)
+                startActivity(intent)
             }
             else if (it.title == "로그아웃") {
                 Toast.makeText(this@MainActivity,"로그아웃 화면 이동",Toast.LENGTH_SHORT).show()
             }
             else if (it.title == "회원가입") {
                 Toast.makeText(this@MainActivity,"회원가입 화면 이동",Toast.LENGTH_SHORT).show()
+                val intent = Intent(this@MainActivity, JoinActivity::class.java)
+                startActivity(intent)
             }
             else if (it.title == "내 정보") {
                 Toast.makeText(this@MainActivity,"내 프로필 화면 이동",Toast.LENGTH_SHORT).show()
