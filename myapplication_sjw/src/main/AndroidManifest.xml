@@ -8,6 +8,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication_231020_test1">
+        <activity
+            android:name=".MemberListActivity"
+            android:exported="false" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

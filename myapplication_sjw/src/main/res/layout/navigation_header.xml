@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="200dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#457b9d">
+    android:background="#457b9d"
+    android:orientation="horizontal">
 
     <ImageView
         android:id="@+id/navi_img"
@@ -18,17 +19,46 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
-        android:layout_marginEnd="56dp"
-        android:text="navigation header"
+    <LinearLayout
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         app:layout_constraintStart_toEndOf="@+id/navi_img"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        android:gravity="center_vertical"
+        android:padding="20dp"
+        >
+
+        <TextView
+            android:id="@+id/profileIdTextView"
+            app:layout_constraintStart_toEndOf="@+id/navi_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/profileCarTextView"
+            app:layout_constraintStart_toEndOf="@+id/navi_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="쏘나타"
+            android:layout_marginTop="15dp"/>
+        <TextView
+            android:id="@+id/profileCarEngineTextView"
+            app:layout_constraintStart_toEndOf="@+id/navi_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="가솔린"
+            android:layout_marginTop="15dp"/>
+        <TextView
+            android:id="@+id/profileCarBenefitTextView"
+            app:layout_constraintStart_toEndOf="@+id/navi_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="하이브리드 할인"
+            android:layout_marginTop="15dp"/>
+
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

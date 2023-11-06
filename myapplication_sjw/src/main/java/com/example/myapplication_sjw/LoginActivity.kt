@@ -52,6 +52,18 @@ class LoginActivity : AppCompatActivity() {
                 Toast.makeText(this@LoginActivity, "로그인 실패", Toast.LENGTH_LONG).show()
             }else{
                 Toast.makeText(this@LoginActivity, "로그인 성공", Toast.LENGTH_LONG).show()
+
+                // 공유프리퍼런스 값 넣기. 저장.
+                val pref = getSharedPreferences("memberInfo", MODE_PRIVATE)
+                val editor = pref.edit()
+                editor.putString("id",res.getString(1))
+                editor.putString("pw",res.getString(2))
+                editor.putString("profileImage",res.getString(5))
+                editor.commit()
+                
+                //이동
+                val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                startActivity(intent)
             }
             
         }

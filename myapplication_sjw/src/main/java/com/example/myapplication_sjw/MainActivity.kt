@@ -2,18 +2,28 @@ package com.example.myapplication_sjw
 
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
+import android.nfc.Tag
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.SharedMemory
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
 import com.example.myapplication_sjw.adapter.ViewPageAdapter
 import com.example.myapplication_sjw.databinding.ActivityMainBinding
+import com.example.myapplication_sjw.databinding.FragmentTab1Binding
+import com.example.myapplication_sjw.fragment.Tab1Fragment
 import com.google.android.material.tabs.TabLayoutMediator
+import java.util.prefs.Preferences
+import kotlin.coroutines.jvm.internal.CompletedContinuation.context
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,6 +31,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var Tag:String
     // 액션 버튼 토글(스위치), 서랍화면 나오게 하는 버튼.
     lateinit var toggle : ActionBarDrawerToggle
+    lateinit var pref:SharedPreferences
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Tag = "sjw"
@@ -88,6 +99,26 @@ class MainActivity : AppCompatActivity() {
 
 
 
+    }
+
+    override fun onStart() {
+        super.onStart()
+
+        pref = getSharedPreferences("memberInfo", MODE_PRIVATE);
+        //로그인 했다면
+        if(pref != null){
+            var naviId = pref.getString("id","Default ID")
+            var naviImg = pref.getString("profileImage","Default ProfileImage")
+
+            findViewById<TextView>(R.id.profileIdTextView).text = naviId
+
+            Glide.with(context).load(user?.avatar)
+           //크기조절
+           .override(100,100)
+           //결과 이미지 넣기
+           .into(findViewById<ImageView>(R.id.navi_img))
+
+        }
     }
 
     // 2) 액션바에 오버플로우 메뉴 붙이기

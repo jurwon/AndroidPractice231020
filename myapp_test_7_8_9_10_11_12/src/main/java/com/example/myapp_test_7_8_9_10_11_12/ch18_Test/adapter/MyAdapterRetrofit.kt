@@ -5,6 +5,7 @@ import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.myapp_test_7_8_9_10_11_12.ch18_Test.model.UserModel
 import com.example.myapp_test_7_8_9_10_11_12.ch18_Test.retrofit.MyApplication
 import com.example.myapp_test_7_8_9_10_11_12.databinding.ItemRetrofitBinding
@@ -80,11 +81,11 @@ class MyAdapterRetrofit(val context: Context, val datas: List<UserModel>?)
 
         //glide로 이미지 직접 가져와서 처리
         //방법 2)
-        /*Glide.with(context).load(user?.avatar)
+        Glide.with(context).load(user?.avatar)
             //크기조절
             .override(100,100)
             //결과 이미지 넣기
-            .into(binding.retrofitProfileImg)*/
+            .into(binding.retrofitProfileImg)
             
 
     }

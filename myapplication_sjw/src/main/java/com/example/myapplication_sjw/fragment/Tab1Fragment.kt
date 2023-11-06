@@ -33,6 +33,8 @@ class Tab1Fragment : Fragment() {
     ): View? {
         binding = FragmentTab1Binding.inflate(layoutInflater,container,false)
         return binding.root
+
+
     }
 
     // 2) 액션바에 오버플로우 메뉴 붙이기
