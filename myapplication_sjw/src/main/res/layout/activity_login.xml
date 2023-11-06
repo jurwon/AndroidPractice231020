@@ -1,51 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".LoginActivity">
+    android:layout_height="match_parent">
 
-    <ImageView
-        android:layout_width="400dp"
-        android:layout_height="300dp"
-        android:src="@drawable/main"/>
-
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="아이디를 입력해주세요."
-        android:textSize="20sp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="100dp"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_vertical|center_horizontal"
+        android:padding="20dp">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="아이디를 입력하기."
-        android:inputType="text"
-        android:layout_marginLeft="10dp"
-        />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="아이디를 입력해주세요."
+            android:textSize="20sp"
+            android:layout_marginTop="100dp"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="패스워드를 입력해주세요."
-        android:textSize="20sp"
-        android:layout_marginLeft="10dp"/>
+        <EditText
+            android:id="@+id/idEditView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="아이디를 입력하기."
+            android:inputType="text"/>
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="패스워드를 입력하기."
-        android:inputType="textPassword"
-        android:layout_marginLeft="10dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="패스워드를 입력해주세요."
+            android:textSize="20sp"/>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="로그인하기"/>
+        <EditText
+            android:id="@+id/passwordEditView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="패스워드를 입력하기."
+            android:inputType="textPassword"/>
 
-</LinearLayout>
+        <Button
+            android:id="@+id/loginBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="로그인"
+            android:layout_marginTop="20dp"/>
+        <Button
+            android:id="@+id/goJoinViewBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="회원가입"/>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -86,7 +86,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     // 2) 액션바에 오버플로우 메뉴 붙이기
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    /*override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         // 만약, 다른 메뉴를 만들어서 교체 작업, 밑에 부분으로 교체.
         menuInflater.inflate(R.menu.toolbar_menu,menu)
 
@@ -111,7 +111,7 @@ class MainActivity : AppCompatActivity() {
         })
 
         return super.onCreateOptionsMenu(menu)
-    }
+    }*/
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         //이벤트가 toggle 버튼에서 제공된거라면..
