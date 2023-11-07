@@ -86,6 +86,8 @@ class MainActivity : AppCompatActivity() {
             }
             else if (it.title == "회원 조회") {
                 Toast.makeText(this@MainActivity,"회원조회 화면 이동",Toast.LENGTH_SHORT).show()
+                val intent = Intent(this@MainActivity, MemberListActivity::class.java)
+                startActivity(intent)
             }
             true
         }
