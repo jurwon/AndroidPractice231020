@@ -53,12 +53,17 @@ class LoginActivity : AppCompatActivity() {
             }else{
                 Toast.makeText(this@LoginActivity, "로그인 성공", Toast.LENGTH_LONG).show()
 
+                //인덱스 처음부터 읽기
+                res.moveToFirst()
+
+                Log.d("sjw","id : ${res.getString(0)}")
+
                 // 공유프리퍼런스 값 넣기. 저장.
                 val pref = getSharedPreferences("memberInfo", MODE_PRIVATE)
                 val editor = pref.edit()
-                editor.putString("id",res.getString(1))
-                editor.putString("pw",res.getString(2))
-                editor.putString("profileImage",res.getString(5))
+                editor.putString("id",res.getString(0))
+                editor.putString("pw",res.getString(1))
+                editor.putString("profileImage",res.getString(4))
                 editor.commit()
                 
                 //이동

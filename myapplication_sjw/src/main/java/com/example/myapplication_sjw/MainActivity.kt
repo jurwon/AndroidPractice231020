@@ -21,9 +21,9 @@ import com.example.myapplication_sjw.adapter.ViewPageAdapter
 import com.example.myapplication_sjw.databinding.ActivityMainBinding
 import com.example.myapplication_sjw.databinding.FragmentTab1Binding
 import com.example.myapplication_sjw.fragment.Tab1Fragment
+import com.google.android.material.navigation.NavigationView
 import com.google.android.material.tabs.TabLayoutMediator
 import java.util.prefs.Preferences
-import kotlin.coroutines.jvm.internal.CompletedContinuation.context
 
 class MainActivity : AppCompatActivity() {
 
@@ -105,18 +105,25 @@ class MainActivity : AppCompatActivity() {
         super.onStart()
 
         pref = getSharedPreferences("memberInfo", MODE_PRIVATE);
+
+        //navigation뷰 가져오기
+        val navigationView = binding.mainDrawerView
+        val headerView = navigationView.getHeaderView(0)
+        val profileIdTextView = headerView.findViewById<TextView>(R.id.profileIdTextView)
+
+
         //로그인 했다면
         if(pref != null){
             var naviId = pref.getString("id","Default ID")
             var naviImg = pref.getString("profileImage","Default ProfileImage")
 
-            findViewById<TextView>(R.id.profileIdTextView).text = naviId
+            profileIdTextView.text = naviId
 
-            Glide.with(context).load(user?.avatar)
+            /*Glide.with(context).load(user?.avatar)
            //크기조절
            .override(100,100)
            //결과 이미지 넣기
-           .into(findViewById<ImageView>(R.id.navi_img))
+           .into(findViewById<ImageView>(R.id.navi_img))*/
 
         }
     }
